@@ -10,11 +10,14 @@ connectDB()
 const app = express()
 
 const goalRoutes = require('./routes/goalRoutes')
+const userRoutes = require('./routes/userRoutes')
 
 // routes and middleware
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
+
 app.use('/api/goals', goalRoutes)
+app.use('/api/users', userRoutes)
 
 // error handling middleware
 app.use(errorHandler)
