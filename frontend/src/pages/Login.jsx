@@ -10,8 +10,10 @@ function Login() {
   const { email, password } = formData
 
   const onChange = (e) => {
+    // take the previous state { email: '', password: '' } and combine with new values in the input
+    // example of combination: { email: '', password: '', email: 's' } -> { email: 's', password: '' }
     setFormData((prevState) => ({
-      ...prevState,
+      ...prevState, 
       [e.target.name]: e.target.value,
     }))
   }
